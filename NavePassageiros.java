@@ -1,4 +1,5 @@
 
+
 public class NavePassageiros extends NaveEspacial{
 
 	int numeropassageiros;
@@ -34,6 +35,12 @@ public class NavePassageiros extends NaveEspacial{
 
 	@Override
 	public void viajar(double distancia) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void carregar(int i) {
 		// TODO Auto-generated method stub
 		
 	}
