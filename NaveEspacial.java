@@ -1,10 +1,11 @@
 
+
 public abstract class NaveEspacial {
 
 	protected String nome;
-	private double velmax;
-	private int numtri;
-	private double combustivel;
+	protected double velmax;
+	protected int numtri;
+	protected double combustivel;
 	
 	public NaveEspacial (String nome, double velmax, int numtri, double combustivel) {
 	
@@ -31,6 +32,9 @@ public abstract class NaveEspacial {
 		return "NaveEspacial [nome=" + nome + ", velmax=" + velmax + ", numtri=" + numtri + ", combustivel="
 				+ combustivel + "]";
 	}
+
+
+	protected abstract void carregar(int i);
 	
 	
 	
