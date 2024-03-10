@@ -1,7 +1,7 @@
 
 public class NaveCarga extends NaveEspacial {
 
-	private double capacidadecarga;
+	protected double capacidadecarga;
 	
 	
 	
@@ -11,14 +11,25 @@ public class NaveCarga extends NaveEspacial {
 	}
 
 	public void acelerar(double velocidade) {
+		velmax = velmax + 10;
 	
 	}
 	
 	public void desacelerar(double velocidade) {
-		
+		velmax = velmax - 10;
 	}
 	
 	public void carregar(double carga) {
+		double cargamax = 1000;
+		if (carga <= cargamax) {
+			carga -= cargamax;	
+			System.out.println("Carga maxima atingida");
+		}
+		else {
+			System.out.println("Carga maxima ultrapassada");
+
+		}
+		
 		System.out.println("Carga de " + carga + " toneladas carregada na nave de carga " );
 	}
 
@@ -29,13 +40,31 @@ public class NaveCarga extends NaveEspacial {
 
 	@Override
 	public void abastecer(double litros) {
-		// TODO Auto-generated method stub
+		 combustivel = combustivel / litros;
+		
+
 		
 	}
 
 	@Override
 	public void viajar(double distancia) {
+		double distnpercorrida = 950;
+		if(distnpercorrida >= distancia ) {
+			System.out.println ("Chegou ao seu Destino");
+		}else {
+			System.out.println ("não Chegou ao Destino");
+
+		}
+	}
+
+	@Override
+	protected void carregar(int i) {
 		// TODO Auto-generated method stub
+		
+	}
+
+}
+
 		
 	}
 
