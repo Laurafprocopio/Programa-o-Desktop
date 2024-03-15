@@ -21,21 +21,31 @@ public class Principal {
         double combustivel = scanner.nextDouble();
         
 
-        System.out.println("Escolha o tipo de nave (1 - Carga, 2 - Passageiros, 3 - Combate):");
-        int tipoNave = scanner.nextInt();
+       
 
+        while (true){
+        	
+        	 System.out.println("Escolha o tipo de nave (1 - Carga, 2 - Passageiros, 3 - Combate, 4 - Sair)");
+             int tipoNave = scanner.nextInt();
+        
         switch (tipoNave) {
             case 1:
                 System.out.println("Digite a capacidade de carga da nave (em toneladas):");
                 double capacidadeCarga = scanner.nextDouble();
                 NaveCarga naveCarga = new NaveCarga(nome, velocidadeMaxima, numeroTripulantes, combustivel, capacidadeCarga);
                 System.out.println(naveCarga);
+                
+                System.out.println("Nave Passageiro");
+        
                 break;
             case 2:
                 System.out.println("Digite o número atual de passageiros na nave:");
                 int numeroPassageiros = scanner.nextInt();
                 NavePassageiros navePassageiros = new NavePassageiros(nome, velocidadeMaxima, numeroTripulantes, combustivel, numeroPassageiros);
                 System.out.println(navePassageiros);
+                
+                System.out.println("Nave Combate");
+                
                 break;
             case 3:
                 System.out.println("Digite o armamento da nave:");
@@ -43,12 +53,15 @@ public class Principal {
                 String armamento = scanner.nextLine();
                 NaveCombate naveCombate = new NaveCombate(nome, velocidadeMaxima, numeroTripulantes, combustivel, armamento);
                 System.out.println(naveCombate);
+               
                 break;
-            default:
-                System.out.println("Tipo de nave inválido!");
-                break;
+            case 4:
+            	System.out.println("Sair");
+    			System.exit(0);
+    			break;
         }
 
-        scanner.close();
+        
     }
+	}
 }
